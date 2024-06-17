@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class AboutMe {
 
     public static void main(String[] args) {
+        try{
         //Criando o objeto scanner
 
         Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
@@ -24,6 +25,11 @@ public class AboutMe {
         System.out.println("Olá me chamo " + nome + " " + sobrenome);
         System.out.println("Tenho " + idade + " anos ");
         System.out.println("Minha altura é " + altura + "cm");
+        scanner.close();
+        }
+        catch (InputMismatchException e){
+            System.out.println("O campos idade e altura precisam ser numéricos");
+        }
     }
 }
     
